@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-
+        
+      - name: Install tree
+        run:  apt-get install tree
+        
       - name: Build
         run: tree -H '.' -i -L 1 --noreport --charset utf-8 > index.html
 
